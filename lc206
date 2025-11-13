@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-  ListNode* reverseList(ListNode* head) {
+    ListNode* reverseList(ListNode* head) {
     ListNode* previous = nullptr; // creating precursor
     ListNode* current = head; // creating current pointer given head
 

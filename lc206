@@ -1,22 +1,33 @@
 // LeetCode Reverse Linked List Puzzle 206
 
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-    ListNode* previous = nullptr; // creating precursor
-    ListNode* current = head; // creating current pointer given head
+        ListNode* previous = nullptr; //creating precursor
+        ListNode* current = head; //creating current pointer given head
 
-    while (current != NULL) {
-      ListNode* nextNode = current->next; // to temp save the next node
+        while (current != NULL) {
+            ListNode* nextNode = current->next; // temporarily saves the next node
 
-      current->next = previous; // making the next node it points to the previous node before current
-      previous = current; // updating precious to current
-      current = nextNode; // updating current to the next node
+            current->next = previous; // makes the next node equal to the previous node
+            previous = current; // updates previous into the current node
+            current = nextNode; // makes the current node equal to the next node
 
-      // time complexity = O(n) since it traverses the lisr n times
+            // time complexity should be O(n) since it has to traverse through n items
+        }
+
+        return previous;
+
 
     }
-
-  return previous;
-
-}
+};

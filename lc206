@@ -1,0 +1,22 @@
+// LeetCode Reverse Linked List Puzzle 206
+
+class Solution {
+public:
+  ListNode* reverseList(ListNode* head) {
+    ListNode* previous = nullptr; // creating precursor
+    ListNode* current = head; // creating current pointer given head
+
+    while (current != NULL) {
+      ListNode* nextNode = current->next; // to temp save the next node
+
+      current->next = previous; // making the next node it points to the previous node before current
+      previous = current; // updating precious to current
+      current = nextNode; // updating current to the next node
+
+      // time complexity = O(n) since it traverses the lisr n times
+
+    }
+
+  return previous;
+
+}

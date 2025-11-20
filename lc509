@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int fib(int n) {
+
+        if (n == 0) return 0; // base case = 0
+        int a = 0;
+        int b = 1; // base case = 1
+
+        for(int i = 2; i <= n; i++) { // starting from 2 to n
+            int sum = a + b; // fib(i) = fib(i-1) + fib(i-2)
+            a = b; // updating
+            b = sum; // updating
+        }
+
+        return b; //returning number at certain sequence
+
+        
+    }
+};
